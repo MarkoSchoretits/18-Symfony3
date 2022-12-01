@@ -22,7 +22,7 @@ class BirthdaysType extends AbstractType
               'attr' => ['class' => 'form-control', 'style' => 'margin-bottom:15px']
           ])
           ->add('date', DateType::class, [
-              'attr' => ['style' => 'margin-bottom:15px']
+              'attr' => ['class' => 'form-control', 'style' => 'margin-bottom:15px']
           ])
           ->add('type', TextType::class, [
               'attr' => ['class' => 'form-control', 'style' => 'margin-bottom:15px']

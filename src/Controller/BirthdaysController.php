@@ -82,4 +82,20 @@ class BirthdaysController extends AbstractController
         return $this->render('birthdays/details.html.twig', 
         ['anniversary' => $anniversary]);
     }
+
+    #[Route('/delete/{id}', name: 'birthdays_delete')]
+    public function delete($id, ManagerRegistry $doctrine): Response
+    {
+        $em = $doctrine->getManager();
+        $anniversary = $em->getRepository(Anniversary::class)->find($id);
+        $em->remove($anniversary);
+        
+        $em->flush();
+        $this->addFlash(
+            'notice',
+            'Anniversary Removed'
+        );
+        
+        return $this->redirectToRoute('birthdays');
+    }
 }
