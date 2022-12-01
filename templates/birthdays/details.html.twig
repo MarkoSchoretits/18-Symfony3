@@ -1,0 +1,13 @@
+
+{% extends 'base.html.twig' %}
+{% block body %}
+   <hr>
+   <h2 class="page-header">{{anniversary.name}}</h2>
+   <ul class="list-group">
+       <li class="list-group-item">Details: {{anniversary.details}}</li>
+   </ul>
+{#    <p>
+       {{anniversary.details}}
+   </p><br>
+ #}   <a class="btn btn-info" href="/birthdays/">Back</a>
+{% endblock %}
